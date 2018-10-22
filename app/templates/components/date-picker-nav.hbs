@@ -1,0 +1,7 @@
+<nav class="ember-power-calendar-nav">
+  <button class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter -1 'month'}}>&#9664;</button>
+  <div class="ember-power-calendar-nav-title">
+    <span class="t__h2">{{moment-format calendar.center 'MMMM YYYY'}}</span>
+  </div>
+  <button class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter 1 'month'}}>&#9658;</button>
+</nav>

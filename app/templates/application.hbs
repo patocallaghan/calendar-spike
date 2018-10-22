@@ -1,5 +1,33 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+<div style="display: flex">
+  <div style="padding-right: 40px;">
+    <h2>Default</h2>
+    <DatePicker
+      @center={{month1}}
+      @selected={{selected1}}
+      @onSelect={{action (mut selected1) value="date"}}
+    />
+  </div>
+
+  <div style="padding-right: 40px;">
+    <h2>Disable range of days</h2>
+    <DatePicker
+      @center={{month2}}
+      @selected={{selected2}}
+      @onSelect={{action (mut selected2) value="date"}}
+      @minDate={{minDate}}
+      @maxDate={{maxDate}}
+    />
+    <button onclick={{action (mut selected2) undefined}}>Clear</button>
+  </div>
+
+  <div style="padding-right: 40px;">
+    <h2>Disable individual days</h2>
+    <DatePicker
+      @center={{month3}}
+      @selected={{selected3}}
+      @onSelect={{action (mut selected3) value="date"}}
+      @disabledDates={{disabledDates}}
+    />
+  </div>
+</div>

@@ -1,0 +1,17 @@
+{{#power-calendar
+  class="demo-calendar-small"
+  center=@center
+  selected=@selected
+  onCenterChange=(action (mut center) value="date")
+  onSelect=@onSelect
+  navComponent='date-picker-nav'
+as |calendar|}}
+  {{calendar.nav}}
+  {{calendar.days
+    weekdayFormat="min"
+    showDaysAround=false
+    minDate=@minDate
+    maxDate=@maxDate
+    disabledDates=@disabledDates
+  }}
+{{/power-calendar}}
