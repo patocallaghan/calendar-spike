@@ -1,18 +1,18 @@
 {{outlet}}
+{{moment-format selected1 'dd MMM YYYY'}}
 <div style="display: flex">
   <div style="padding-right: 40px;">
     <h2>Default</h2>
     <DatePicker
-      @center={{month1}}
       @selected={{selected1}}
       @onSelect={{action (mut selected1) value="date"}}
     />
+    <button onclick={{action (mut selected1) undefined}}>Clear</button>
   </div>
 
   <div style="padding-right: 40px;">
     <h2>Disable range of days</h2>
     <DatePicker
-      @center={{month2}}
       @selected={{selected2}}
       @onSelect={{action (mut selected2) value="date"}}
       @minDate={{minDate}}
@@ -24,9 +24,19 @@
   <div style="padding-right: 40px;">
     <h2>Disable individual days</h2>
     <DatePicker
-      @center={{month3}}
       @selected={{selected3}}
       @onSelect={{action (mut selected3) value="date"}}
+      @disabledDates={{disabledDates}}
+    />
+  </div>
+
+  <div style="padding-right: 40px;">
+    <h2>Disable range and specific days</h2>
+    <DatePicker
+      @selected={{selected4}}
+      @onSelect={{action (mut selected4) value="date"}}
+      @minDate={{minDate}}
+      @maxDate={{maxDate}}
       @disabledDates={{disabledDates}}
     />
   </div>

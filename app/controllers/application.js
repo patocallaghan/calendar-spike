@@ -10,4 +10,9 @@ export default Controller.extend({
   minDate: new Date(2018, 9, 10),
   maxDate: new Date(2018, 9, 25),
   disabledDates: [new Date(2018, 9, 15), new Date(2018, 9, 10), new Date(2018, 10, 1), new Date(2018, 9, 27)],
+  actions: {
+    onSelect(date) {
+      console.log(date);
+    }
+  }
 })
